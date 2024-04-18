@@ -2,7 +2,7 @@
     <article>
         <section v-for="note in notes" :key="note.id">
             <p>{{ note.text }}</p>
-            <p>{{ note.id }}</p>
+            <p class="date">{{ note.date }}</p>
         </section>
     </article>
 </template>
@@ -27,5 +27,9 @@ section {
 
 p {
     color: black;
+}
+
+.date {
+    font-size: 0.8em;
 }
 </style>

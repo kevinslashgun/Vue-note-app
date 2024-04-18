@@ -29,8 +29,8 @@ const closeModal = () => {
   showAddNote.value = false
 }
 
-const sendNote = (note) => {
-  notes.value.push({ id: id.value++, text: note})
+const sendNote = (note, date) => {
+  notes.value.push({ id: id.value++, text: note, date: date})
   showAddNote.value = false
 }
 
