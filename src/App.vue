@@ -1,6 +1,6 @@
 <template>
   <div class="overlay" v-if="showAddNote">
-    <AddNotes @closeModal="closeModal" @addNote="sendNote"/>
+    <AddNotes @closeModal="closeModal" @addNote="sendNote" />
   </div>
   <header>
     <h1>Notes</h1>
@@ -35,16 +35,17 @@ const sendNote = (note, date) => {
 }
 
 function generaColoreChiaroCasuale() {
-    // Genera tre valori casuali per i canali RGB
-    var r = Math.floor(Math.random() * 156) + 100; // I valori vanno da 100 a 255 per colori più chiari
-    var g = Math.floor(Math.random() * 156) + 100;
-    var b = Math.floor(Math.random() * 156) + 100;
+  // Genera tre valori casuali per i canali RGB in un intervallo più limitato
+  const r = Math.floor(Math.random() * 156) + 100; // da 100 a 255 per colori più chiari
+  const g = Math.floor(Math.random() * 156) + 100;
+  const b = Math.floor(Math.random() * 156) + 100;
 
-    // Crea il colore in formato RGB
-    var colore = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+  // Crea il colore in formato RGB diretto
+  const colore = `rgb(${r}, ${g}, ${b})`;
 
-    return colore;
+  return colore;
 }
+
 
 </script>
 
@@ -65,7 +66,8 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: black;
-  color: aliceblue;
+  color: #f0f8ff;
+  /* AliceBlue in formato esadecimale */
   padding: 1em;
 }
 
@@ -74,7 +76,8 @@ h1 {
 }
 
 button {
-  background-color: aliceblue;
+  background-color: #f0f8ff;
+  /* AliceBlue in formato esadecimale */
   border: none;
   border-radius: 50%;
   color: black;
@@ -86,7 +89,8 @@ button {
 }
 
 button:hover {
-  background-color: lightblue;
+  background-color: #add8e6;
+  /* LightBlue in formato esadecimale */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }

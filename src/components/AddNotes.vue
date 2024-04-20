@@ -46,8 +46,10 @@ label {
     color: black;
     font-size: 1em;
     cursor: pointer;
-    width: 10%;
-    height: 10%;
+    width: 2em;
+    /* Utilizzo di un valore specifico per width invece di percentuale */
+    height: 2em;
+    /* Utilizzo di un valore specifico per height invece di percentuale */
     position: absolute;
     right: 0;
     top: 0;
@@ -56,7 +58,6 @@ label {
 
 .close:hover {
     background-color: red;
-    color: black;
 }
 
 textarea,
@@ -83,6 +84,5 @@ button {
 button:hover {
     background-color: darkblue;
     color: white;
-    cursor: pointer;
 }
 </style>
