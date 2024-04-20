@@ -2,7 +2,7 @@
     <form>
         <label for="note">Note:</label>
         <button type="button" class="close" @click="close">X</button>
-        <textarea name="note" id="note" cols="30" rows="10"></textarea>
+        <textarea v-model="note" name="note" id="note" cols="30" rows="10"></textarea>
         <button type="button" @click="submit">Add Note</button>
     </form>
 </template>
@@ -10,9 +10,12 @@
 <script setup>
 import { ref } from 'vue'
 const emit = defineEmits(['closeModal', 'addNote'])
+const note = ref('')
+
 const close = () => {
     emit('closeModal')
 }
+
 const submit = () => {
     emit('addNote', note.value, new Date().toLocaleString("it-IT"))
     note.value = ''
@@ -56,11 +59,13 @@ label {
     color: black;
 }
 
-
-textarea {
+textarea,
+.note-text {
     border-radius: 5px;
     padding: 0.5em;
     margin-bottom: 1em;
+    overflow: auto;
+    /* Abilita lo scrolling se il testo supera il contenitore */
 }
 
 button {
