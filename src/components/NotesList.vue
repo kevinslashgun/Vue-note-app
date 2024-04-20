@@ -1,6 +1,6 @@
 <template>
     <article>
-        <section v-for="note in notes" :key="note.id">
+        <section v-for="note in notes" :key="note.id" :style="{backgroundColor: note.backgroundColor}">
             <p>{{ note.text }}</p>
             <p class="date">{{ note.date }}</p>
         </section>
@@ -23,6 +23,10 @@ section {
     border-radius: 5px;
     padding: 1em;
     margin: 1em;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 p {

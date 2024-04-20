@@ -14,17 +14,7 @@ const close = () => {
     emit('closeModal')
 }
 const submit = () => {
-    const currentDate = new Date();
-
-    const day = currentDate.getDate().toString().padStart(2, '0');
-    const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // Aggiungi 1 perché i mesi sono zero-based
-    const year = currentDate.getFullYear();
-
-    const dateString = `${day}/${month}/${year}`;
-
-    console.log(dateString);
-
-    emit('addNote', note.value, dateString)
+    emit('addNote', note.value, new Date().toLocaleString("it-IT"))
     note.value = ''
 }
 </script>
