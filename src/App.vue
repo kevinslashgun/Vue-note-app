@@ -30,8 +30,20 @@ const closeModal = () => {
 }
 
 const sendNote = (note, date) => {
-  notes.value.push({ id: id.value++, text: note, date: date})
+  notes.value.push({ id: id.value++, text: note, date: date, backgroundColor: generaColoreChiaroCasuale() })
   showAddNote.value = false
+}
+
+function generaColoreChiaroCasuale() {
+    // Genera tre valori casuali per i canali RGB
+    var r = Math.floor(Math.random() * 156) + 100; // I valori vanno da 100 a 255 per colori più chiari
+    var g = Math.floor(Math.random() * 156) + 100;
+    var b = Math.floor(Math.random() * 156) + 100;
+
+    // Crea il colore in formato RGB
+    var colore = 'rgb(' + r + ', ' + g + ', ' + b + ')';
+
+    return colore;
 }
 
 </script>
